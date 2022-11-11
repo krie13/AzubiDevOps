@@ -1,0 +1,27 @@
+version: '3.8'
+# Services
+services:
+    # PHP Service
+    openjdk:
+        image: openjdk:11
+        ports:
+            - 8080:8080
+        build:
+            context: .
+            dockerfile: java-dockerfile
+        depends_on:
+            - mysql
+        container_name: java
+
+    # MariaDB Service
+    mysql:
+        image: mysql
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=1234
+            - MYSQL_PASSWORD=1234
+            - MYSQL_USER=root
+        volumes:
+            - ~/data/docker/container_mysql/database:/var/lib/mysql
+        container_name: mysql
