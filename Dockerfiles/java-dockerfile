@@ -1,0 +1,7 @@
+FROM openjdk:11
+
+EXPOSE 8081
+
+ADD AzubiDevOps-App.jar spring-boot-docker-maven.jar
+
+ENTRYPOINT ["openjdk","-jar","spring-boot-docker-maven.jar"]
