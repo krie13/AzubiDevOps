@@ -1,0 +1,31 @@
+version: '2.12'
+services:
+        mysql:
+                image: mysql
+                ports:
+                        - 3306:3306
+                environment:
+                        - MYSQL_ROOT_PASSWORD=adminadmin
+                volumes:
+                        - ~/data/docker/container_mysql/database:/var/lib/mysql
+                command: --init-file init.sql
+                container_name: mysql
+                networks:
+                        - AzubiDevOps-Netz
+        java:
+                ports:
+                        - 8081:8080
+                build:
+                        context: /root/AzubiDevOps/Dockerfiles/JAVA
+                        dockerfile: Dockerfile
+                container_name: java
+                depends_on:
+                        - mysql
+                networks:
+                        - AzubiDevOps-Netz
+networks:
+        AzubiDevOps-Netz:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: "192.168.0.0/24"
