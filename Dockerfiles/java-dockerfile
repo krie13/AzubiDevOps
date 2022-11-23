@@ -1,7 +1,5 @@
 FROM openjdk:11
 
-EXPOSE 8081
+ADD customerapi.jar AzubiDevOps-App.jar
 
-ADD AzubiDevOps-App.jar spring-boot-docker-maven.jar
-
-ENTRYPOINT ["openjdk","-jar","spring-boot-docker-maven.jar"]
+ENTRYPOINT ["java","-jar","AzubiDevOps-App.jar"]
