@@ -1,0 +1,4 @@
+aktuell liegt alles im root Verzeichniss
+Das Docker-Compose-File liegt in /root/AzubiDevOps/Dockerfiles
+Das dockerfile und die App für den Java-Container liegt in /root/AzubiDevOps/Dockerfiles/JAVA
+die init.sql Datei liegt im Ordner des MySql-Containers unter data/docker/container_mysql/database/
