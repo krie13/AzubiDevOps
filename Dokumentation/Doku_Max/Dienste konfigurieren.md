@@ -25,6 +25,12 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 Anschließend die VM neustarten
 
+### Java wurde im Jenkins unter "Konfiguration der Hilfsprogramme" installiert
+***Ist es überhaupt nötig Java auf der VM direkt zu installieren?
+Testen!***
+![[Jenkins_Pfad_Tool_konfiguration.PNG]]
+![[Jenkins_OpenJDK11_hinzugefügt.PNG]]
+
 # Jenkins
 Es wird die Version 2.361.2 verwendet
 ### Installation
@@ -63,14 +69,14 @@ Nachdem die Plugins installiert sind können die Daten zur Erstellung des ersten
 Durch klicken auf "Save and Finish" wird die konfiguration abgeschlossen
 
 # Maven
-Es wird die Version 3.5.4 genutzt
+Es wird die Version 3.8.6 genutzt
 
-## wie nutze ich maven?
-## richtig konfigurieren?
-## richtige java version nutzen
+Maven wurde im Jenkins unter "Konfiguration der Hilfsprogramme" installiert
+![[Jenkins_Pfad_Tool_konfiguration.PNG]]
+![[Jenkins_Maven_hinzugefügt.PNG]]
 
-
-
+***Ist es überhaupt nötig Maven auf der VM direkt zu installieren?
+Testen!***
 ### Installation
 ```bash
 sudo dnf -y install maven
@@ -78,6 +84,8 @@ sudo dnf -y install maven
 
 # Docker
 Es wird die Version 20.10.21 genutzt
+
+***muss docker auch auf jenkins instaliert werden?***
 
 ### Installation
 ```bash
