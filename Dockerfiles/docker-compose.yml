@@ -1,13 +1,13 @@
 version: '2.12'
 services:
         mysql:
-                image: mysql
                 ports:
                         - 3306:3306
                 environment:
                         - MYSQL_DATABASE=customerapi
                         - MYSQL_PASSWORD=adminadmin
                         - MYSQL_ROOT_PASSWORD=adminadmin
+                image: mysql
                 volumes:
                         - ./init:/docker-entrypoint-initdb.d
                         - /data/database:/var/lib/mysql
