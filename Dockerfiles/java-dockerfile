@@ -1,5 +1,5 @@
 FROM openjdk:11
 
-ADD customerapi.jar AzubiDevOps-App.jar
+ADD /var/lib/jenkins/workspace/BuildRestService/customerapi/target/customerapi-0.0.1-SNAPSHOT.jar AzubiDevOps-App.jar
 
 ENTRYPOINT ["java","-jar","AzubiDevOps-App.jar"]
