@@ -26,6 +26,8 @@ services:
                         - mysql
                 networks:
                         - AzubiDevOps-Netz
+volumes:
+        my-db:
 networks:
         AzubiDevOps-Netz:
                 ipam:
