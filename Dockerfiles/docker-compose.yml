@@ -5,7 +5,7 @@ services:
                 ports:
                         - 3306:3306
                 environment:
-                        - MYSQL_DATABASE=db
+                        - MYSQL_DATABASE=customerapi
                         - MYSQL_PASSWORD=adminadmin
                         - MYSQL_ROOT_PASSWORD=adminadmin
                 volumes:
