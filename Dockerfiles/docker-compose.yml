@@ -16,7 +16,7 @@ services:
                 ports:
                         - 8081:8080
                 build:
-                        context: /root/AzubiDevOps/Dockerfiles/JAVA
+                        context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
                         dockerfile: Dockerfile
                 container_name: java
                 depends_on:
