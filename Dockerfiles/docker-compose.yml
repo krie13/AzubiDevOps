@@ -18,7 +18,7 @@ services:
                       - MYSQL_DATABASE=customerapi
                       - MYSQL_ROOT_PASSWORD=adminadmin
                 ports:
-                       - '3306:3307'
+                       - '3306:3306'
                 volumes:
                       - db:/var/lib/mysql
                       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -28,7 +28,7 @@ services:
         java:
                 ports:
                         - '8080:8081'
-                        - '3306:3307'
+                        - '3306:3306'
                 build:
                         context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
                         dockerfile: java-dockerfile
