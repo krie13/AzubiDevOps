@@ -22,7 +22,7 @@ services:
                         - AzubiDevOps-Netz
         java:
                 ports:
-                        - 8080:8081
+                        - 8080:8080
                 build:
                         context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
                         dockerfile: java-dockerfile
