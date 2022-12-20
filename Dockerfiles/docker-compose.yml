@@ -28,7 +28,7 @@ services:
         java:
                 ports:
                         - '8080:8081'
-                        - '3306:3306'
+                        - '3306:3307'
                 build:
                         context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
                         dockerfile: java-dockerfile
