@@ -9,7 +9,7 @@ networks:
 
 services:
         db:
-                image: mysql:8.0
+                image: mysql
                 cap_add:
                       - SYS_NICE
                 restart: always
