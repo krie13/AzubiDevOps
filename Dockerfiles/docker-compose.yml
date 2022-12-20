@@ -1,7 +1,7 @@
 version: '3.8'
 
 networks:
-        AzubiDevOps-Netz:
+        dockerfiles_AzubiDevOps-Netz:
                 ipam:
                         driver: default
                         config:
