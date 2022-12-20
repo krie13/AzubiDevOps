@@ -29,9 +29,11 @@ services:
                 ports:
                         - '8080:8081'
                         #- '3306:3307'
-                build:
-                        context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
-                        dockerfile: java-dockerfile
+                build:  .
+                        #context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
+                        #dockerfile: java-dockerfile
+                links:
+                        - "db:mysql"
                 container_name: java
                 depends_on:
                         - db
