@@ -16,6 +16,17 @@ services:
                 container_name: mysql
                 networks:
                         - AzubiDevOps-Netz
+        java:
+                ports:
+                        - 8081:8080
+                build:
+                        context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
+                        dockerfile: java-dockerfile
+                container_name: java
+                depends_on:
+                        - db
+                networks:
+                        - AzubiDevOps-Netz
 volumes:
         db:
                 driver: local
