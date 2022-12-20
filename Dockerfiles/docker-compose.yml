@@ -8,9 +8,6 @@ services:
                         - MYSQL_DATABASE=customerapi
                         - MYSQL_PASSWORD=adminadmin
                         - MYSQL_ROOT_PASSWORD=adminadmin
-                volumes:
-                        - ./init:/docker-entrypoint-initdb.d
-                        - /data/database:/var/lib/mysql
                 command: --init-file init.sql
                 container_name: mysql
                 networks:
