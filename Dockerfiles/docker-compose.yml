@@ -1,7 +1,8 @@
 version: '2.12'
 services:
         mysql:
-                image: mysql:5.7
+                image: mysql
+                restart: unless-stopped
                 ports:
                         - 3306:3306
                 environment:
