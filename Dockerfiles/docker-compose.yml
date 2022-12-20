@@ -28,10 +28,10 @@ services:
         java:
                 ports:
                         - '8080:8081'
-                        - '3306:3307'
+                        #- '3306:3307'
                 build:
                         context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
-                        dockerfile: java-dockerfile
+                        #dockerfile: java-dockerfile
                 container_name: java
                 depends_on:
                         - db
