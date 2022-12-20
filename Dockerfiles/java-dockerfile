@@ -1,5 +1,6 @@
 FROM openjdk:11
 
+EXPOSE 8080
 ADD /customerapi.jar AzubiDevOps-App.jar
 
 ENTRYPOINT ["java","-jar","AzubiDevOps-App.jar"]
