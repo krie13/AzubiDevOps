@@ -32,7 +32,7 @@ services:
                         dockerfile: java-dockerfile
                 container_name: java
                 depends_on:
-                        - db
+                        - apache
                 networks:
                         - AzubiDevOps-Netz
         apache:
@@ -42,6 +42,10 @@ services:
                         - '8080:80'
                 volumes:
                         - ./website:/usr/local/apache2/htdocs
+                depends_on:
+                        - db
+                networks:
+                        - AzubiDevOps-Netz
 volumes:
         db:
                 driver: local
