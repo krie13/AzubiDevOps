@@ -20,7 +20,6 @@ volumes:
         db:
                 driver: local
 
-
 networks:
         AzubiDevOps-Netz:
                 ipam:
