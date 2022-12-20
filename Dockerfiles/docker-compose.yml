@@ -1,4 +1,12 @@
 version: '3.8'
+
+networks:
+        AzubiDevOps-Netz:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: "192.168.0.0/24"
+
 services:
         db:
                 image: mysql:8.0
@@ -15,7 +23,7 @@ services:
                       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
                 container_name: mysql
                 networks:
-                        - dockerfiles_AzubiDevOps-Netz
+                        - AzubiDevOps-Netz
         java:
                 ports:
                         - 8081:8080
@@ -26,14 +34,9 @@ services:
                 depends_on:
                         - db
                 networks:
-                        - dockerfiles_AzubiDevOps-Netz
+                        - AzubiDevOps-Netz
 volumes:
         db:
                 driver: local
 
-networks:
-        dockerfiles_AzubiDevOps-Netz:
-                ipam:
-                        driver: default
-                        config:
-                                - subnet: "192.168.0.0/24"
+
