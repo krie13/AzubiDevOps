@@ -16,7 +16,7 @@ services:
                       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
                 container_name: mysql
                 networks:
-                        - AzubiDevOps-Netz
+                        - dockerfiles_AzubiDevOps-Netz
         java:
                 ports:
                         - 8081:8081
@@ -27,7 +27,7 @@ services:
                 depends_on:
                         - db
                 networks:
-                        - AzubiDevOps-Netz
+                        - dockerfiles_AzubiDevOps-Netz
 volumes:
         db:
                 driver: local
