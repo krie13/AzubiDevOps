@@ -29,7 +29,7 @@ services:
                 ports:
                         - '8080'
                         #- '3306:3307'
-                build:  .
+                build:  
                         context: /data/AzubiDevOps/Dockerfiles/
                         dockerfile: java-dockerfile
                 links:
