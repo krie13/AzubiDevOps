@@ -4,7 +4,7 @@ networks:
         AzubiDevOps-Netz:
 
 services:
-        db:
+        mysql:
                 image: mysql
                 cap_add:
                       - SYS_NICE
@@ -28,7 +28,7 @@ services:
                         dockerfile: java-dockerfile
                 container_name: java
                 depends_on:
-                        - db
+                        - mysql
                 networks:
                         - AzubiDevOps-Netz
 volumes:
