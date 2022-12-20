@@ -13,9 +13,9 @@ services:
                 volumes:
                       - db:/var/lib/mysql
                       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
-                volumes:
-                        db:
-                                driver: local
+        volumes:
+                db:
+                        driver: local
                 container_name: mysql
                 networks:
                         - AzubiDevOps-Netz
