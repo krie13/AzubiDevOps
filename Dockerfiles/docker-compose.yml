@@ -1,7 +1,7 @@
 version: '3.8'
 
 networks:
-        AzubiDevOps-Netz:
+        bridge:
                 ipam:
                         driver: default
                         config:
