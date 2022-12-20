@@ -1,14 +1,14 @@
 version: '3.8'
 
 networks:
-        dockerfiles_AzubiDevOps-Netz:
+        AzubiDevOps-Netz:
                 ipam:
                         driver: default
                         config:
                                 - subnet: "192.168.0.0/24"
 
 services:
-        mysql:
+        db:
                 image: mysql
                 cap_add:
                       - SYS_NICE
@@ -32,7 +32,7 @@ services:
                         dockerfile: java-dockerfile
                 container_name: java
                 depends_on:
-                        - mysql
+                        - db
                 networks:
                         - AzubiDevOps-Netz
 volumes:
