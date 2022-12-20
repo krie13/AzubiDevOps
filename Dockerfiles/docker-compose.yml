@@ -30,8 +30,8 @@ services:
                         - '8080'
                         #- '3306:3307'
                 build:  .
-                        #context: /var/lib/jenkins/workspace/BuildRestService/Dockerfiles
-                        #dockerfile: java-dockerfile
+                        context: /data/AzubiDevOps/Dockerfiles/
+                        dockerfile: java-dockerfile
                 links:
                         - "db:mysql"
                 container_name: java
