@@ -1,11 +1,11 @@
 version: '3.8'
 
-#networks:
-        #AzubiDevOps-Netz:
-                #ipam:
-                        #driver: default
-                        #config:
-                                #- subnet: "192.168.0.0/24"
+networks:
+        AzubiDevOps-Netz:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: "192.168.0.0/24"
 
 services:
         db:
