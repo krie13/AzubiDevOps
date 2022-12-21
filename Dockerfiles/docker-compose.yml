@@ -9,7 +9,7 @@ networks:
 
 services:
         db:
-                image: mysql
+                image: mysql:5.7
                 cap_add:
                       - SYS_NICE
                 hostname: mysql
