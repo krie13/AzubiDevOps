@@ -33,6 +33,7 @@ services:
                 links:
                         - "db:mysql"
                 container_name: java
+                restart: always
                 depends_on:
                         - db
                 networks:
