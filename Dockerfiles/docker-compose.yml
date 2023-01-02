@@ -17,7 +17,7 @@ services:
                 environment:
                       - MYSQL_DATABASE=customerapi
                       - MYSQL_ROOT_PASSWORD=adminadmin
-                expose:
+                ports:
                        - '3306:3306'
                 volumes:
                       - db:/var/lib/mysql
