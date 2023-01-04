@@ -4,8 +4,10 @@ pipeline {
         stage('Pre-Build') {
             steps {
                 // Stoppt und löscht bestehende und laufende Container
-                sh 'cd /data/AzubiDevOps/Dockerfiles'
-                sh 'sudo docker compose down'
+                sh '''
+                cd /data/AzubiDevOps/Dockerfiles'
+                sudo docker compose down'
+                '''
                 /* Verzeichniss für Projektrelevante Dateien
                 Muss eigenständig erstellt werden */
                 sh 'cd /data/'   
