@@ -7,12 +7,6 @@ pipeline {
                 sh '''
                 cd /data/AzubiDevOps/Dockerfiles
                 sudo docker compose down
-                '''
-                /* Verzeichniss für Projektrelevante Dateien
-                Muss eigenständig erstellt werden */
-                sh 'cd /data/'   
-                // Löscht das alte Git Repository und clont es erneut um Änderungen zu übernehmen
-                sh '''
                 cd /data/
                 sudo rm -rf AzubiDevOps/
                 sudo git clone https://github.com/krie13/AzubiDevOps/
