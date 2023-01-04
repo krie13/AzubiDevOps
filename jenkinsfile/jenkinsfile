@@ -12,8 +12,11 @@ pipeline {
                 Muss eigenständig erstellt werden */
                 sh 'cd /data/'   
                 // Löscht das alte Git Repository und clont es erneut um Änderungen zu übernehmen
-                sh 'sudo rm -rf AzubiDevOps/'
-                sh 'sudo git clone https://github.com/krie13/AzubiDevOps/'
+                sh '''
+                cd /data/
+                sudo rm -rf AzubiDevOps/
+                sudo git clone https://github.com/krie13/AzubiDevOps/
+                '''
             }
         }
         stage('Build') {
