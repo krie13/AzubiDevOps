@@ -5,8 +5,8 @@ pipeline {
             steps {
                 // Stoppt und löscht bestehende und laufende Container
                 sh '''
-                cd /data/AzubiDevOps/Dockerfiles'
-                sudo docker compose down'
+                cd /data/AzubiDevOps/Dockerfiles
+                sudo docker compose down
                 '''
                 /* Verzeichniss für Projektrelevante Dateien
                 Muss eigenständig erstellt werden */
