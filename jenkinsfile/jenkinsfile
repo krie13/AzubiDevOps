@@ -3,36 +3,10 @@ pipeline {
     stages {
         stage('Pre-Build') {
             steps {
-                // Stoppt und löscht bestehende und laufende Container und läd Git-Repo neu runter
                 sh '''
-                cd /data/AzubiDevOps/Dockerfiles
-                sudo docker compose down
-                cd /data/
-                sudo rm -rf AzubiDevOps/
-                sudo git clone https://github.com/krie13/AzubiDevOps/
+                cd /data/AzubiDevOps/customerapi
+                sudo mvn install
                 '''
-            }
-        }
-        stage('Build') {
-            steps {
-                // Erstellt die customerapi.jar
-                sh '''
-                cd /data/AzubiDevOps/customerapi/ 
-                mvn clean install
-                '''
-            }
-        }
-        stage('Post-Build') {
-            steps {
-                // Navigiert in das Verzeichniss der Dockerfiles
-                sh 'cd /data/AzubiDevOps/Dockerfiles'
-                // Löscht alte Java-Datei und kopiert die, im Build-Prozess erstellte, Datei
-                sh 'sudo rm -f /data/AzubiDevOps/Dockerfiles/customerapi.jar'
-                sh 'sudo cp /var/lib/jenkins/.m2/repository/de/telekom/customerapi/0.0.1-SNAPSHOT/customerapi-0.0.1-SNAPSHOT.jar /data/AzubiDevOps/Dockerfiles/customerapi.jar'
-                // Container werden erstellt und gestartet
-                sh 'sudo docker compose up --build -d'
-                // Alte Docker-Images werden gelöscht
-                sh 'echo y | sudo -S docker system prune -a'
             }
         }
     }
