@@ -1,7 +1,18 @@
 pipeline {
     agent any
     stages {
-        
+        stage('Pre-Build') {
+            steps {
+                // Stoppt und löscht bestehende und laufende Container und läd Git-Repo neu runter
+                sh '''
+                cd /data/AzubiDevOps/Dockerfiles
+                sudo docker compose down
+                cd /data/
+                sudo rm -rf AzubiDevOps/
+                sudo git clone https://github.com/krie13/AzubiDevOps/
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
