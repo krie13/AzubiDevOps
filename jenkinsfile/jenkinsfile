@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
                 cd /data/AzubiDevOps/customerapi
-                sudo mvn install
+                echo adminadmin | sudo -S mvn install
                 '''
             }
         }
