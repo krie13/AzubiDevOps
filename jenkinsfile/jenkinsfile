@@ -15,12 +15,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
-                // Navigiert in das Code-Verzeichniss des Projekts
-                sh 'cd /data/AzubiDevOps/customerapi/' 
                 // Erstellt die customerapi.jar
-                withMaven {
-                    sh "mvn clean install"
+                sh '''
+                cd /data/AzubiDevOps/customerapi/ 
+                mvn clean install
+                '''
                 }
             }
         }
