@@ -20,7 +20,6 @@ pipeline {
                 cd /data/AzubiDevOps/customerapi/ 
                 mvn clean install
                 '''
-                }
             }
         }
         stage('Post-Build') {
