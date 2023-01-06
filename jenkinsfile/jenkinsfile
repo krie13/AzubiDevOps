@@ -19,7 +19,9 @@ pipeline {
                 // Baut Java-Application mit Maven
                 sh '''
                 cd /var/lib/jenkins/workspace/Scripted-Build/customerapi
+                pwd
                 mvn clean install
+                pwd
                 '''
             }
         }
