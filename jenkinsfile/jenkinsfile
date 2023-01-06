@@ -6,7 +6,7 @@ pipeline {
                 // Baut Java-Application mit Maven
                 sh '''
                 pwd
-                cd customerapi
+                cd /var/lib/jenkins/workspace/Scripted-Build/customerapi
                 pwd
                 mvn install
                 pwd
