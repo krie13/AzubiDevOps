@@ -4,6 +4,7 @@ pipeline {
         stage('Pre-Build') {
             steps {
                 sh '''
+                cd customerapi
                 mvn install
                 '''
             }
