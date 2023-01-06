@@ -20,7 +20,7 @@ pipeline {
                 sh '''
                 cd /var/lib/jenkins/workspace/Scripted-Build/customerapi
                 pwd
-                mvn clean install
+                mvn install
                 pwd
                 '''
             }
