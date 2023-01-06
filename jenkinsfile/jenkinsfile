@@ -5,7 +5,9 @@ pipeline {
             steps {
                 // Baut Java-Application mit Maven
                 sh '''
+                pwd
                 cd customerapi
+                pwd
                 mvn install
                 '''
             }
