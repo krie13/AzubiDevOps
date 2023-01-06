@@ -1,19 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Pre-Build') {
-            steps {
-                // Stoppt und löscht alte Container
-                // Läd Git-Repo neu runter
-                sh '''
-                cd /data/AzubiDevOps/Dockerfiles
-                sudo docker compose down
-                cd /data/
-                sudo rm -rf AzubiDevOps/
-                sudo git clone https://github.com/krie13/AzubiDevOps/
-                '''
-            }
-        }
         stage('Build') {
             steps {
                 // Baut Java-Application mit Maven
@@ -22,20 +9,6 @@ pipeline {
                 pwd
                 mvn install
                 pwd
-                '''
-            }
-        }
-        stage('Post-Build') {
-            steps {
-                // Löscht alte Java-Datei und kopiert im Build-Prozess erstellte Datei in das /data/AzubiDevOps/Dockerfiles Verzeichnis
-                // Container werden erstellt und gestartet
-                // löscht alte Docker-Images
-                sh '''
-                cd /data/AzubiDevOps/Dockerfiles
-                sudo rm -f /data/AzubiDevOps/Dockerfiles/customerapi.jar
-                sudo cp /var/lib/jenkins/.m2/repository/de/telekom/customerapi/0.0.1-SNAPSHOT/customerapi-0.0.1-SNAPSHOT.jar /data/AzubiDevOps/Dockerfiles/customerapi.jar
-                sudo docker compose up --build -d
-                echo y | sudo -S docker system prune -a
                 '''
             }
         }
