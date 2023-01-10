@@ -1,1 +1,16 @@
-w
+pipeline {
+    agent any
+    stages {
+        stage('Java-Build') {
+            steps {
+                // Baut Java-Application mit Maven
+                sh '''
+                pwd
+                cd customerapi
+                pwd
+                mvn install
+                '''
+            }
+        }
+    }
+}
