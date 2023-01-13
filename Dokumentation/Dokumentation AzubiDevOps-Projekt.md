@@ -2,10 +2,6 @@
 1. Virtuelle Maschine
 	1.1 VM erstellen
 	1.2 Verbingung herstellen
-	1.3 Port freigeben
-	1.4 Netzwerkgruppe
-		1.4.1 Erstellen
-		1.4.2 Hinzufügen
 1. Softwareübersicht
 	2.1 Windows-Client
 	2.2 Linux-Server
@@ -55,7 +51,7 @@ Durch klicken auf "Zur Ressource wechseln" erfolgt die weiterleitung auf die Üb
 ![[../Bilder/Azure-VM_IPs.PNG]]
 
 ## 1.2 Verbindung herstellen
-Öffnen Sie die "Windows Terminal App", klicken sie oben rechts auf den Pfeil nach unten und wählen Sie Azure Cloud Shell aus
+Laden Sie dir Windows Terminal App aus dem Microsoft-Store herunter und öfnen Sie diese. Klicken sie oben rechts auf den Pfeil nach unten und wählen Sie Azure Cloud Shell aus
 Führen Sie die gezeigten anweisungen aus
 
 Sind die Schritte durchgeführt können Sie sich per SSH mit der öffentlichen IP-Adresse der Maschiene verbinden
@@ -70,8 +66,6 @@ Es werden folgende Dienste zur Entwicklung der Java-Anwendung auf dem Windows-Cl
 - IntelliJ Community Edition - https://www.jetbrains.com/de-de/idea/download/#section=windows (latest)
 - HeidiSQL - https://www.heidisql.com/download.php (latest)
 - Java - https://jdk.java.net/archive/ (version 11.0.2)
-- Postman -  https://www.postman.com/downloads/ (latest)
-- XAMPP (MySQL Datenbank)- https://www.apachefriends.org/de/index.html (latest)
 
 ## 2.2 Linux-Server
 Es werden folgende Dienste auf dem Linux-Client benötigt:
@@ -81,26 +75,16 @@ Es werden folgende Dienste auf dem Linux-Client benötigt:
 - Git (latest)
 - Jenkins (latest)
 
-# 3 Software installation und konfiguration
+# 3 Software installation
 ## 3.1 Windows-Client
 ### IntelliJ Community Edition
+Bei der installation sind keine optionalen Einstellung nötig, alles kann durch klicken auf "Next" bestätigt werden
 
 ### HeidiSQL
+Bei der installation sind keine optionalen Einstellung nötig, alles kann durch klicken auf "Next" bestätigt werden
 
 ### Java
 
-### Postman
-
-### XAMPP
-
-#### Setup XAMPP
-
-Nach dem das Programm geöffnet ist unter dem Modul MySQL mit dem Button "Konfig" die Datei "my.ini" an folgenden Stellen anpassen:
-```yml
-password=1234 
-```
-
-Anschließend über den Button "Starten" den MySQL Service ausführen.
 
 ## 3.2 Linux-Server
 ### Maven
