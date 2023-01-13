@@ -1,5 +1,9 @@
 
 Diese Dokumentation umfasst die gesamte normale Dokumentation und wird mit der Dokumentation zur Pipeline als jenkinsfile (im github) und der entfernung aller Sudo rechte des Jenkins-Users erweitert
+Das Jenkinsfile funktioniert noch nicht richtig. es kommt immer ein Fehler beim kompilieren
+eigentlich sollte es vom sysntax her stimmen
+Die Jenkinsfiles (auch testfiles) liegen im GitHub 
+die Pipeline steht schon im Jenkins
 
 # Inhalt
 1. Virtuelle Maschine
